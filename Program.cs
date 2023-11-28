@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 using static System.Console;
+using System.Threading;
 
 namespace GuestBookSpace
 {
@@ -27,12 +28,8 @@ namespace GuestBookSpace
             }
         }
 
-        static void Main(string[] args)
+        static void PrintMenu(Manager manager)
         {
-            // Instanser
-            Manager manager = new Manager();
-
-            // Skriver ut menyn
             WriteLine("AXELS GÄSTBOK");
             WriteLine();
             WriteLine("1. Skriv nytt inlägg.");
@@ -42,54 +39,78 @@ namespace GuestBookSpace
             WriteLine();
             PrintPosts(manager); // Skriver ut alla inlägg
             WriteLine("");
+            WriteLine("Välj ett alternativ genom att skriva en karaktär + enter.");
 
-            bool success = false;
-            while (success == false)
+        }
+
+        static bool manageInput(string? input, Manager manager)
+        {
+            string feedback;
+
+            switch (input)
             {
-                WriteLine("Välj ett alternativ genom att skriva en karaktär + enter.");
+                case "1":
+                    Clear();
+                    WriteLine("SKRIV NYTT INLÄGG");
+                    WriteLine();
+                    WriteLine("Namn:");
+                    string? author = ReadLine();
+                    WriteLine("Meddelande:");
+                    string? message = ReadLine();
+                    feedback = manager.AddPost(author, message);
+                    Clear();
+                    WriteLine(feedback);
+                    break;
+                case "2":
+                    Clear();
+                    WriteLine("TA BORT INLÄGG");
+                    WriteLine();
+                    PrintPosts(manager);
+                    WriteLine("");
+                    WriteLine("Radera inlägg genom att skriva in dess index + enter.");
+                    WriteLine("Index:");
+                    string? index = ReadLine();
+                    feedback = manager.DeletePost(index);
+                    Clear();
+                    WriteLine(feedback);
+                    break;
+                case "X":
+                    Clear();
+                    WriteLine("Programmet avslutas, hej då!");
+                    return true;
+                default:
+                    Clear();
+                    WriteLine("Felmeddelande: Karaktären motsvarar inte ett alternativ.");
+                    break;
+            }
+            return false;
+        }
+
+        static void Main(string[] args)
+        {
+            // Instanser
+            Manager manager = new Manager();
+
+            // Skapar en do-while-loop som exekveras så länge succes == false
+            bool success = false;
+            do
+            {
+                // Rensar konsolen
+                Clear();
+
+                // Skriver ut menyn
+                PrintMenu(manager);
 
                 // Läser av input
                 string? input = ReadLine();
-                string feedback;
-                switch (input)
-                {
-                    case "1":
-                        Clear();
-                        WriteLine("SKRIV NYTT INLÄGG");
-                        WriteLine();
-                        WriteLine("Namn:");
-                        string? author = ReadLine();
-                        WriteLine("Meddelande:");
-                        string? message = ReadLine();
-                        feedback = manager.AddPost(author, message);
-                        Clear();
-                        WriteLine(feedback);
-                        success = true;
-                        break;
-                    case "2":
-                        Clear();
-                        WriteLine("TA BORT INLÄGG");
-                        WriteLine();
-                        PrintPosts(manager);
-                        WriteLine("");
-                        WriteLine("Radera inlägg genom att skriva in dess index + enter.");
-                        WriteLine("Index:");
-                        string? index = ReadLine();
-                        feedback = manager.DeletePost(index);
-                        Clear();
-                        WriteLine(feedback);
-                        success = true;
-                        break;
-                    case "X":
-                        Clear();
-                        WriteLine("Programmet avslutas, hej då!");
-                        success = true;
-                        break;
-                    default:
-                        WriteLine("Felmeddelande: Karaktären motsvarar inte ett alternativ.");
-                        break;
-                }
+
+                // Hanterar input
+                success = manageInput(input, manager);
+
+                // Ger möjlighet att läsa meddelandet genom en paus
+                Thread.Sleep(2000);
             }
+            while (success == false);
         }
     }
 }
