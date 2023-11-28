@@ -1,0 +1,14 @@
+/Users/axestromsoe/Desktop/DT071G, Programmering i C#.NET/Moment 3/guest_book/bin/Debug/net8.0/guest_book
+/Users/axestromsoe/Desktop/DT071G, Programmering i C#.NET/Moment 3/guest_book/bin/Debug/net8.0/guest_book.deps.json
+/Users/axestromsoe/Desktop/DT071G, Programmering i C#.NET/Moment 3/guest_book/bin/Debug/net8.0/guest_book.runtimeconfig.json
+/Users/axestromsoe/Desktop/DT071G, Programmering i C#.NET/Moment 3/guest_book/bin/Debug/net8.0/guest_book.dll
+/Users/axestromsoe/Desktop/DT071G, Programmering i C#.NET/Moment 3/guest_book/bin/Debug/net8.0/guest_book.pdb
+/Users/axestromsoe/Desktop/DT071G, Programmering i C#.NET/Moment 3/guest_book/obj/Debug/net8.0/guest_book.GeneratedMSBuildEditorConfig.editorconfig
+/Users/axestromsoe/Desktop/DT071G, Programmering i C#.NET/Moment 3/guest_book/obj/Debug/net8.0/guest_book.AssemblyInfoInputs.cache
+/Users/axestromsoe/Desktop/DT071G, Programmering i C#.NET/Moment 3/guest_book/obj/Debug/net8.0/guest_book.AssemblyInfo.cs
+/Users/axestromsoe/Desktop/DT071G, Programmering i C#.NET/Moment 3/guest_book/obj/Debug/net8.0/guest_book.csproj.CoreCompileInputs.cache
+/Users/axestromsoe/Desktop/DT071G, Programmering i C#.NET/Moment 3/guest_book/obj/Debug/net8.0/guest_book.dll
+/Users/axestromsoe/Desktop/DT071G, Programmering i C#.NET/Moment 3/guest_book/obj/Debug/net8.0/refint/guest_book.dll
+/Users/axestromsoe/Desktop/DT071G, Programmering i C#.NET/Moment 3/guest_book/obj/Debug/net8.0/guest_book.pdb
+/Users/axestromsoe/Desktop/DT071G, Programmering i C#.NET/Moment 3/guest_book/obj/Debug/net8.0/guest_book.genruntimeconfig.cache
+/Users/axestromsoe/Desktop/DT071G, Programmering i C#.NET/Moment 3/guest_book/obj/Debug/net8.0/ref/guest_book.dll
